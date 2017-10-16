@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<include resource="org/springframework/boot/logging/logback/base.xml" />
+	
+	<appender name="start_default" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>tart_default.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<!-- 按天回滚 daily -->
+			<fileNamePattern>start_default.%d{yyyy-MM-dd}.log</fileNamePattern>
+			<!-- 日志最大的历史 10天 -->
+            <maxHistory>10</maxHistory>
+		</rollingPolicy>
+		<encoder charset="UTF-8">
+			<pattern>%-4relative [%thread] %-5level %logger{35} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	
+	
+	<!-- <root level="INFO">
+		<appender-ref ref="start_default" />
+	</root> -->
+    <!--druid-->
+    <logger name="druid.sql" level="DEBUG"/>
+    <logger name="druid.sql.Connection" level="error"/>
+	<logger name="com.alibaba.alimonitor.jmonitor.client" level="OFF" />
+	<logger name="org.springframework.jdbc.core.JdbcTemplate" level="error"/>
+	<logger name="cn.com.flaginfo" level="DEBUG"/>
+	<logger name="com.alibaba" level="DEBUG" additivity="true"/>	
+</configuration>

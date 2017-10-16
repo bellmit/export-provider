@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+<!--     <parent>
+        <groupId>cn.com.flaginfo.platform.export</groupId>
+        <artifactId>export-parent</artifactId>
+        <version>6.1.0-SNAPSHOT</version>
+    </parent>
+ -->
+    <groupId>cn.com.flaginfo.platform.export</groupId>
+    <artifactId>export-api</artifactId>
+    <version>6.1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>export-api</name>
+    <url>http://maven.apache.org</url>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>cn.com.flaginfo</groupId>
+            <artifactId>api-common</artifactId>
+            <version>6.1.0-SNAPSHOT</version>
+        </dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+		
+    </dependencies>
+
+	<build>
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+			</plugin>
+			
+		</plugins>
+	</build>
+		
+	<distributionManagement>
+		<!-- 发布的库 -->
+		<!-- <repository> <id>releases</id> <name>Release Repository</name> <url>http://10.0.0.28:8081/nexus/content/repositories/releases/</url> 
+			</repository> -->
+		<!-- 开发的库 -->
+		<snapshotRepository>
+			<id>snapshots</id>
+			<name>Snapshot Repository</name>
+			<url>http://10.0.0.28:8081/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+
+</project>
